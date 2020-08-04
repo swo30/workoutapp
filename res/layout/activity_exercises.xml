@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <ImageButton
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseGif1"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseGif2"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseText1" />
+
+        <TextView
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseText2" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <ImageButton
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseGif3"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseGif4"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseText3" />
+
+        <TextView
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseText4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <ImageButton
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseGif5"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseGif6"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseText5" />
+
+        <TextView
+            style="@style/exerciseImages"
+            android:id="@+id/exerciseText6" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

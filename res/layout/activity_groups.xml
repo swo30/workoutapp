@@ -1,0 +1,224 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+
+<LinearLayout
+    android:id="@+id/TitleLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Chose your muscle groups"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/chestText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Chest"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/chestCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text=""/>
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/backText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="Back"
+        android:gravity="center"
+
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/backCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text="" />
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/biText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="Biceps"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/biCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text="" />
+</LinearLayout>
+
+
+
+
+<LinearLayout
+    android:id="@+id/linearLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/triText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="Triceps"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/triCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text="" />
+</LinearLayout>
+
+
+
+
+
+<LinearLayout
+    android:id="@+id/linearLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/shoulderText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="Shoulders"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/shoulderCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text="" />
+</LinearLayout>
+
+
+
+
+
+<LinearLayout
+    android:id="@+id/linearLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/legText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="Legs"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/legCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text="" />
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/cardioText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="Cardio"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/cardioCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:clickable="false"
+        android:text="" />
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/linearLayout8"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="Next"
+        android:textSize="30sp"
+        android:visibility="visible" />
+
+</LinearLayout>
+
+
+
+
+</LinearLayout>
