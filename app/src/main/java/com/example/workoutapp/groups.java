@@ -20,9 +20,10 @@ public class groups extends AppCompatActivity implements View.OnClickListener{
     int tricepsIndex = 3;
     int shouldersIndex = 4;
     int legsIndex = 5;
+    int cardioIndex = 6;
 
 
-    CheckBox muscleCheckBox[] = new CheckBox[6];
+    CheckBox muscleCheckBox[] = new CheckBox[7];
 
     Button nextButtn;
 
@@ -37,11 +38,12 @@ public class groups extends AppCompatActivity implements View.OnClickListener{
         muscleCheckBox[tricepsIndex] = findViewById(R.id.triCheckBox);
         muscleCheckBox[shouldersIndex] = findViewById(R.id.shoulderCheckBox);
         muscleCheckBox[legsIndex] = findViewById(R.id.legCheckBox);
+        muscleCheckBox[cardioIndex] = findViewById(R.id.cardioCheckBox);
 
         nextButtn = findViewById(R.id.nextButton);
         nextButtn.setOnClickListener(this);
 
-        for (int i=0;i<6;i++){
+        for (int i=0;i<=6;i++){
             muscleCheckBox[i].setOnClickListener(this);
         }
 
@@ -96,6 +98,11 @@ public class groups extends AppCompatActivity implements View.OnClickListener{
             case R.id.legCheckBox:
                 workout[legsIndex] = String.valueOf(muscleCheckBox[legsIndex].isChecked());
                 enableNext();
+                break;
+
+            case R.id.cardioCheckBox:
+                muscleCheckBox[cardioIndex].setChecked(false);
+                Toast.makeText(this,"Lmao, you ain't doing cardio",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nextButton:

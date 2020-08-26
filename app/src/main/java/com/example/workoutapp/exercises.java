@@ -120,13 +120,4 @@ public class exercises extends AppCompatActivity {
         }
         return array;
     }
-
-    public void randomizeWorkout(){
-        int resID;
-        String muscleGroups[] = new String[] {"chest","back","biceps","triceps","shoulders","legs"};
-        for(int i=0;i<6;i++) {
-            resID = getResources().getIdentifier("arms", "drawable", "com.example.workoutapp");
-            exerciseGifs[i].setImageResource(resID);
-        }
-    }
 }
