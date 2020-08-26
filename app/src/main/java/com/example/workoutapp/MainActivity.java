@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    Boolean[] workout = {false,false,false,false,false,false};
-
-
+    String[] workout = new String[] {"false", "false", "false", "false", "false", "false"};;
     Button FullBodyButtn;
     Button PushButtn;
     Button PullButtn;
@@ -36,26 +38,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public void resetWorkout() {
+        for (int i=0;i<6;i++) {
+            workout[i] = "false";
+        }
+    }
+
     @Override
     public void onClick(View view) {
 
         switch (view.getId()) {
             case R.id.fullbody:
                 for (int i=0;i<6;i++) {
-                    workout[i] = true;
+                    workout[i] = "true";
                 }
                 goExercises();
                 break;
 
             case R.id.push:
-                workout[0] = true;
-                workout[3] = true;
-                workout[4] = true;
+                resetWorkout();
+                workout[0] = "true";
+                workout[3] = "true";
+                workout[4] = "true";
                 goExercises();
                 break;
             case R.id.pull:
-                workout[1] = true;
-                workout[2] = true;
+                resetWorkout();
+                workout[1] = "true";
+                workout[2] = "true";
                 goExercises();
                 break;
 
@@ -72,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void goExercises(){
         Intent intent = new Intent(this, exercises.class);
-        intent.putExtra("workout",workout);
-        startActivity(intent);
+        intent.putExtra("workout", workout);
+        this.startActivity(intent);
     }
 }

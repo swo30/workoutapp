@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class groups extends AppCompatActivity implements View.OnClickListener{
 
-    Boolean[] workout = {false,false,false,false,false,false};
+    String[] workout = new String[] {"false", "false", "false", "false", "false", "false"};;
 
     int chestIndex = 0;
     int backIndex = 1;
@@ -56,7 +56,7 @@ public class groups extends AppCompatActivity implements View.OnClickListener{
     public void enableNext(){
         nextButtn.setEnabled(false);
         for(int i=0;i<6;i++){
-            if (workout[i]){
+            if (workout[i].equals("true")){
                 nextButtn.setEnabled(true);
             }
         }
@@ -69,32 +69,32 @@ public class groups extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.chestCheckBox:
-                workout[chestIndex] = muscleCheckBox[chestIndex].isChecked();
+                workout[chestIndex] = String.valueOf(muscleCheckBox[chestIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.backCheckBox:
-                workout[backIndex] = muscleCheckBox[backIndex].isChecked();
+                workout[backIndex] = String.valueOf(muscleCheckBox[backIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.biCheckBox:
-                workout[bicepsIndex] = muscleCheckBox[bicepsIndex].isChecked();
+                workout[bicepsIndex] = String.valueOf(muscleCheckBox[bicepsIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.triCheckBox:
-                workout[tricepsIndex] = muscleCheckBox[tricepsIndex].isChecked();
+                workout[tricepsIndex] = String.valueOf(muscleCheckBox[tricepsIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.shoulderCheckBox:
-                workout[shouldersIndex] = muscleCheckBox[shouldersIndex].isChecked();
+                workout[shouldersIndex] = String.valueOf(muscleCheckBox[shouldersIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.legCheckBox:
-                workout[legsIndex] = muscleCheckBox[legsIndex].isChecked();
+                workout[legsIndex] = String.valueOf(muscleCheckBox[legsIndex].isChecked());
                 enableNext();
                 break;
 
