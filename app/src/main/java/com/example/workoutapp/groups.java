@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class groups extends AppCompatActivity implements View.OnClickListener{
 
-    String[] workout = new String[] {"false", "false", "false", "false", "false", "false"};;
+    String[] muscle_group_bool = new String[] {"false", "false", "false", "false", "false", "false"};;
 
     int chestIndex = 0;
     int backIndex = 1;
@@ -51,52 +51,52 @@ public class groups extends AppCompatActivity implements View.OnClickListener{
 
     public void goExercises(){
         Intent intent = new Intent(this, exercises.class);
-        intent.putExtra("workout",workout);
+        intent.putExtra("muscle_group_bool",muscle_group_bool);
         startActivity(intent);
     }
 
     public void enableNext(){
         nextButtn.setEnabled(false);
         for(int i=0;i<6;i++){
-            if (workout[i].equals("true")){
+            if (muscle_group_bool[i].equals("true")){
                 nextButtn.setEnabled(true);
             }
         }
     }
-//        Toast.makeText(this,Boolean.toString(workout[0]),Toast.LENGTH_SHORT).show();
-//        Toast.makeText(this,Boolean.toString(workout[chestIndex]),Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,Boolean.toString(muscle_group_bool[0]),Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,Boolean.toString(muscle_group_bool[chestIndex]),Toast.LENGTH_SHORT).show();
 
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.chestCheckBox:
-                workout[chestIndex] = String.valueOf(muscleCheckBox[chestIndex].isChecked());
+                muscle_group_bool[chestIndex] = String.valueOf(muscleCheckBox[chestIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.backCheckBox:
-                workout[backIndex] = String.valueOf(muscleCheckBox[backIndex].isChecked());
+                muscle_group_bool[backIndex] = String.valueOf(muscleCheckBox[backIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.biCheckBox:
-                workout[bicepsIndex] = String.valueOf(muscleCheckBox[bicepsIndex].isChecked());
+                muscle_group_bool[bicepsIndex] = String.valueOf(muscleCheckBox[bicepsIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.triCheckBox:
-                workout[tricepsIndex] = String.valueOf(muscleCheckBox[tricepsIndex].isChecked());
+                muscle_group_bool[tricepsIndex] = String.valueOf(muscleCheckBox[tricepsIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.shoulderCheckBox:
-                workout[shouldersIndex] = String.valueOf(muscleCheckBox[shouldersIndex].isChecked());
+                muscle_group_bool[shouldersIndex] = String.valueOf(muscleCheckBox[shouldersIndex].isChecked());
                 enableNext();
                 break;
 
             case R.id.legCheckBox:
-                workout[legsIndex] = String.valueOf(muscleCheckBox[legsIndex].isChecked());
+                muscle_group_bool[legsIndex] = String.valueOf(muscleCheckBox[legsIndex].isChecked());
                 enableNext();
                 break;
 

@@ -31,7 +31,7 @@
 
     <CheckBox
         style="@style/buttons"
-        android:id="@+id/checkBox"
+        android:id="@+id/warmupcheckBox"
         android:text="Warmup"/>
 
 </LinearLayout>
