@@ -20,6 +20,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Random;
 
 public class exercises extends AppCompatActivity implements View.OnClickListener{
@@ -27,7 +28,8 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
     String[] exerciseString = new String[6];
     boolean[] muscle_group_bool = new boolean[6];
     ImageButton[] exerciseGifs = new ImageButton[6];
-    Hashtable<String, String> exercise_key = new Hashtable<String, String>();
+//    BiHashMap<String,String,String> exercise_key2 = new BiHashMap<String,String,String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +43,12 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
         exerciseGifs[4] = findViewById(R.id.exerciseGif5);
         exerciseGifs[5] = findViewById(R.id.exerciseGif6);
 
-        exercise_key.put("chest"    ,"0");
-        exercise_key.put("back"     ,"1");
-        exercise_key.put("biceps"   ,"2");
-        exercise_key.put("triceps"  ,"3");
-        exercise_key.put("shoulders","4");
-        exercise_key.put("legs"     ,"5");
+//        exercise_key.put("chest"    ,"0");
+//        exercise_key.put("back"     ,"1");
+//        exercise_key.put("biceps"   ,"2");
+//        exercise_key.put("triceps"  ,"3");
+//        exercise_key.put("shoulders","4");
+//        exercise_key.put("legs"     ,"5");
 
         for (ImageButton exerciseGif : exerciseGifs) {
             exerciseGif.setOnClickListener(this);
@@ -62,23 +64,25 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
     }
 
     public void customWorkout(){
-        String[] muscleGroups = new String[] {"chest%s","back%s","bis%s","tris%s","shoulders%s","legs%s"};
-        ArrayList<String> exercises = new ArrayList<>();
+
+        String[] muscleGroups = new String[] {"chest","back","bis%s","tris%s","shoulders%s","legs%s"};
+        List<Exercise> exercises = new ArrayList<>();
 
         for(int i=0;i<muscleGroups.length;i++){
             if (muscle_group_bool[i]){
-                exercises.add(muscleGroups[i]);
+//                exercises.add(muscleGroups[i]);
+                exercises = FileManager.exercises_map.get(muscleGroups[i]);
             }
         }
 
         int index; int resID;
         int[] rand = shuffleArray();
         for(int i=0;i<6;i++) {
-            index = i % exercises.size();
-            exerciseString[i] = String.format(exercises.get(index), rand[i]);
-            print(exerciseString[i]);
-            resID = getResources().getIdentifier(exerciseString[i], "drawable", "com.example.workoutapp");
+//            index = i % exercises.size();
+//            exerciseString[i] = String.format(exercises.get(index), rand[i]);
+            resID = getResources().getIdentifier(exercises.get(i).image_name, "drawable", "com.example.workoutapp");
             exerciseGifs[i].setImageResource(resID);
+            exerciseString[i] = exercises.get(i).image_name;
         }
     }
 
@@ -93,43 +97,36 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
         String deez;
         switch (view.getId()) {
             case R.id.exerciseGif1:
-//                writeToFile("15",getApplicationContext());
                 deez = readFromFile(getApplicationContext());
                 Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[0]);
                 break;
 
             case R.id.exerciseGif2:
-//                writeToFile("25",getApplicationContext());
                 deez = readFromFile(getApplicationContext());
                 Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[1]);
                 break;
 
             case R.id.exerciseGif3:
-//                writeToFile("35",getApplicationContext());
                 deez = readFromFile(getApplicationContext());
                 Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[2]);
                 break;
 
             case R.id.exerciseGif4:
-//                writeToFile("45",getApplicationContext());
                 deez = readFromFile(getApplicationContext());
                 Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[3]);
                 break;
 
             case R.id.exerciseGif5:
-//                writeToFile("55",getApplicationContext());
                 deez = readFromFile(getApplicationContext());
                 Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[4]);
                 break;
 
-
             case R.id.exerciseGif6:
-//                writeToFile("65",getApplicationContext());
                 deez = readFromFile(getApplicationContext());
                 Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[5]);
@@ -150,17 +147,6 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
             array[i] = temp;
         }
         return array;
-    }
-
-    private void writeToFile(String data, Context context) {
-        try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", Context.MODE_PRIVATE));
-            outputStreamWriter.write(data);
-            outputStreamWriter.close();
-        }
-        catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
-        }
     }
 
     private String readFromFile(Context context) {

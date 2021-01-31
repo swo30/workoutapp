@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FileManager.map_creation();
 
         FullBodyButtn = findViewById(R.id.fullbody);
         PushButtn = findViewById(R.id.push);
