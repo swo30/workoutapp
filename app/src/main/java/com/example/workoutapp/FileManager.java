@@ -30,6 +30,35 @@ public class FileManager {
             exercises_map.get("back").add(new Exercise("back4", "back4"));
             exercises_map.get("back").add(new Exercise("back5", "back5"));
             exercises_map.get("back").add(new Exercise("back6", "back6"));
+
+            exercises_map.get("bis").add(new Exercise("bis1", "bis1"));
+            exercises_map.get("bis").add(new Exercise("bis2", "bis2"));
+            exercises_map.get("bis").add(new Exercise("bis3", "bis3"));
+            exercises_map.get("bis").add(new Exercise("bis4", "bis4"));
+            exercises_map.get("bis").add(new Exercise("bis5", "bis5"));
+            exercises_map.get("bis").add(new Exercise("bis6", "bis6"));
+
+            exercises_map.get("tris").add(new Exercise("tris1", "tris1"));
+            exercises_map.get("tris").add(new Exercise("tris2", "tris2"));
+            exercises_map.get("tris").add(new Exercise("tris3", "tris3"));
+            exercises_map.get("tris").add(new Exercise("tris4", "tris4"));
+            exercises_map.get("tris").add(new Exercise("tris5", "tris5"));
+            exercises_map.get("tris").add(new Exercise("tris6", "tris6"));
+
+            exercises_map.get("shoulders").add(new Exercise("shoulders1", "shoulders1"));
+            exercises_map.get("shoulders").add(new Exercise("shoulders2", "shoulders2"));
+            exercises_map.get("shoulders").add(new Exercise("shoulders3", "shoulders3"));
+            exercises_map.get("shoulders").add(new Exercise("shoulders4", "shoulders4"));
+            exercises_map.get("shoulders").add(new Exercise("shoulders5", "shoulders5"));
+            exercises_map.get("shoulders").add(new Exercise("shoulders6", "shoulders6"));
+
+            exercises_map.get("legs").add(new Exercise("legs1", "legs1"));
+            exercises_map.get("legs").add(new Exercise("legs2", "legs2"));
+            exercises_map.get("legs").add(new Exercise("legs3", "legs3"));
+            exercises_map.get("legs").add(new Exercise("legs4", "legs4"));
+            exercises_map.get("legs").add(new Exercise("legs5", "legs5"));
+            exercises_map.get("legs").add(new Exercise("legs6", "legs6"));
+
         }
 
 }

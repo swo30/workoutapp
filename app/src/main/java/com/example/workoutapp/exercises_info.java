@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -23,8 +24,10 @@ import java.util.Hashtable;
 
 public class exercises_info extends AppCompatActivity implements View.OnClickListener {
     EditText weight_text;
-    EditText history_weight;
+    TextView history_weight;
     String current_exercise;
+    String str_key;
+    Exercise current_exercise_obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,13 @@ public class exercises_info extends AppCompatActivity implements View.OnClickLis
         ImageView exercise_gif;
         exercise_gif = findViewById(R.id.exercise_gif);
         current_exercise = intent.getStringExtra("exercise");
-        current_exercise = current_exercise.substring(0,current_exercise.length() - 1);
-//        Exercise current_exercise_obj = new Exercise();
+        str_key = current_exercise.substring(0,current_exercise.length() - 1);
+        current_exercise_obj = FileManager.exercises_map.get(str_key).get(Integer.parseInt(current_exercise.substring(current_exercise.length() - 1,current_exercise.length())));
+
+        System.out.println("PRINTINTG THE HISTROY ESTI ");
+        for(Weight weight: current_exercise_obj.weight_history){
+            System.out.println(weight.value);
+        }
 
         int resID = getResources().getIdentifier(current_exercise, "drawable", "com.example.workoutapp");
         exercise_gif.setImageResource(resID);
@@ -44,15 +52,14 @@ public class exercises_info extends AppCompatActivity implements View.OnClickLis
         Button save_button = findViewById(R.id.save_button);
         weight_text = findViewById(R.id.weight_id);
         history_weight = findViewById(R.id.history_weight);
-        history_weight.setText(readFromFile(getApplicationContext()));
         weight_text.setOnClickListener(this);
         save_button.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-//        current_exercise_obj.add_new_weight(Integer.parseInt(weight_text.getText().toString()), "lbs",1);
-
+        current_exercise_obj.add_new_weight(Integer.parseInt(weight_text.getText().toString()), "lbs",1);
+        history_weight.setText(weight_text.getText().toString());
 //        writeToFile(current_weight, getApplicationContext());
 //        history_weight.setText(readFromFile(getApplicationContext()));
     }

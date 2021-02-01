@@ -65,7 +65,7 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
 
     public void customWorkout(){
 
-        String[] muscleGroups = new String[] {"chest","back","bis%s","tris%s","shoulders%s","legs%s"};
+        String[] muscleGroups = new String[] {"chest","back","bis","tris","shoulders","legs"};
         List<Exercise> exercises = new ArrayList<>();
 
         for(int i=0;i<muscleGroups.length;i++){
