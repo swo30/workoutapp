@@ -1,21 +1,36 @@
 package com.example.workoutapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import static android.content.Context.MODE_PRIVATE;
+import android.content.SharedPreferences;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-public class FileManager {
+public class FileManager extends AppCompatActivity {
     public static HashMap<String, List <Exercise>> exercises_map;
+    static SharedPreferences  mPrefs;
 
-        public static void map_creation(){
+        public static void set_preferences(Context context){
+            mPrefs = context.getSharedPreferences("prep", MODE_PRIVATE);
+        }
+
+        public static void generate_map(){
             exercises_map = new HashMap<>();
+
             exercises_map.put("chest", new ArrayList<Exercise>());
             exercises_map.put("back", new ArrayList<Exercise>());
             exercises_map.put("bis", new ArrayList<Exercise>());
             exercises_map.put("tris", new ArrayList<Exercise>());
             exercises_map.put("shoulders", new ArrayList<Exercise>());
             exercises_map.put("legs", new ArrayList<Exercise>());
-            exercises_map.put("core", new ArrayList<Exercise>());
+//            exercises_map.put("core", new ArrayList<Exercise>());
 
             exercises_map.get("chest").add(new Exercise("chest1", "chest1"));
             exercises_map.get("chest").add(new Exercise("chest2", "chest2"));
@@ -61,4 +76,30 @@ public class FileManager {
 
         }
 
+        public static void map_creation(){
+            if (!retrieve()){
+                generate_map();
+            }
+        }
+
+    public static void save() {
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(exercises_map);
+        prefsEditor.putString("SerializableObject", json);
+        prefsEditor.commit();
+    }
+
+    public static boolean retrieve(){
+        Gson gson = new Gson();
+        String json = mPrefs.getString("SerializableObject", "");
+        if (json == ""){
+            return false;
+        }
+        System.out.println("JSON ASDJHASKJDHAFDJHGBDUJKFFHB;AKL");
+        System.out.println(json);
+        Type map_type = new TypeToken<HashMap<String, List <Exercise>>>(){}.getType(); //black magic
+        exercises_map = gson.fromJson(json, map_type);
+        return true;
+    }
 }

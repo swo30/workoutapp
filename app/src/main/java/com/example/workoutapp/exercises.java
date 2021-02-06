@@ -98,37 +98,31 @@ public class exercises extends AppCompatActivity implements View.OnClickListener
         switch (view.getId()) {
             case R.id.exerciseGif1:
                 deez = readFromFile(getApplicationContext());
-                Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[0]);
                 break;
 
             case R.id.exerciseGif2:
                 deez = readFromFile(getApplicationContext());
-                Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[1]);
                 break;
 
             case R.id.exerciseGif3:
                 deez = readFromFile(getApplicationContext());
-                Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[2]);
                 break;
 
             case R.id.exerciseGif4:
                 deez = readFromFile(getApplicationContext());
-                Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[3]);
                 break;
 
             case R.id.exerciseGif5:
                 deez = readFromFile(getApplicationContext());
-                Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[4]);
                 break;
 
             case R.id.exerciseGif6:
                 deez = readFromFile(getApplicationContext());
-                Toast.makeText(this,deez,Toast.LENGTH_SHORT).show();
                 goExercisesInfo(exerciseString[5]);
                 break;
         }

@@ -8,6 +8,10 @@ public class Weight {
     public int set;
     public Date date;
 
+    public String to_string() {
+        return date + " " + value;
+    }
+
     public Weight (double value, String unit, int set, Date date){
         this.value = value;
         this.unit = unit;
