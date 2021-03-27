@@ -15,6 +15,8 @@
 
     <EditText
         android:id="@+id/weight_id"
+        android:inputType="number"
+        android:imeOptions="actionDone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter the weight you used" />
@@ -25,12 +27,6 @@
         android:layout_height="wrap_content"
         android:text="Save" />
 
-    <TextView
-        android:id="@+id/weight_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="" />
 
     <TextView
         android:id="@+id/history_weight"

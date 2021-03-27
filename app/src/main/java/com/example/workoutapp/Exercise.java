@@ -1,5 +1,6 @@
 package com.example.workoutapp;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,7 +16,10 @@ public class Exercise {
     }
 
     public void add_new_weight(double value, String unit, int set){
-        weight_history.add(new Weight(value, unit, set, new Date()));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+        String date = sdf.format(new Date());
+
+        weight_history.add(new Weight(value, unit, set, date));
     }
 
 }

@@ -7,8 +7,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import static android.content.Context.MODE_PRIVATE;
-import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -30,7 +28,7 @@ public class FileManager extends AppCompatActivity {
             exercises_map.put("tris", new ArrayList<Exercise>());
             exercises_map.put("shoulders", new ArrayList<Exercise>());
             exercises_map.put("legs", new ArrayList<Exercise>());
-//            exercises_map.put("core", new ArrayList<Exercise>());
+            exercises_map.put("core", new ArrayList<Exercise>());
 
             exercises_map.get("chest").add(new Exercise("chest1", "chest1"));
             exercises_map.get("chest").add(new Exercise("chest2", "chest2"));
@@ -45,6 +43,8 @@ public class FileManager extends AppCompatActivity {
             exercises_map.get("back").add(new Exercise("back4", "back4"));
             exercises_map.get("back").add(new Exercise("back5", "back5"));
             exercises_map.get("back").add(new Exercise("back6", "back6"));
+            exercises_map.get("back").add(new Exercise("back7", "back7"));
+            exercises_map.get("back").add(new Exercise("back8", "back8"));
 
             exercises_map.get("bis").add(new Exercise("bis1", "bis1"));
             exercises_map.get("bis").add(new Exercise("bis2", "bis2"));
@@ -66,6 +66,7 @@ public class FileManager extends AppCompatActivity {
             exercises_map.get("shoulders").add(new Exercise("shoulders4", "shoulders4"));
             exercises_map.get("shoulders").add(new Exercise("shoulders5", "shoulders5"));
             exercises_map.get("shoulders").add(new Exercise("shoulders6", "shoulders6"));
+            exercises_map.get("shoulders").add(new Exercise("shoulders7", "shoulders7"));
 
             exercises_map.get("legs").add(new Exercise("legs1", "legs1"));
             exercises_map.get("legs").add(new Exercise("legs2", "legs2"));
@@ -73,13 +74,29 @@ public class FileManager extends AppCompatActivity {
             exercises_map.get("legs").add(new Exercise("legs4", "legs4"));
             exercises_map.get("legs").add(new Exercise("legs5", "legs5"));
             exercises_map.get("legs").add(new Exercise("legs6", "legs6"));
+            exercises_map.get("legs").add(new Exercise("legs7", "legs7"));
+
+            exercises_map.get("core").add(new Exercise("core1", "core1"));
+            exercises_map.get("core").add(new Exercise("core2", "core2"));
+            exercises_map.get("core").add(new Exercise("core3", "core3"));
+            exercises_map.get("core").add(new Exercise("core4", "core4"));
+            exercises_map.get("core").add(new Exercise("core5", "core5"));
+            exercises_map.get("core").add(new Exercise("core6", "core6"));
+            exercises_map.get("core").add(new Exercise("core7", "core7"));
+            exercises_map.get("core").add(new Exercise("core8", "core8"));
+            exercises_map.get("core").add(new Exercise("core9", "core9"));
+            exercises_map.get("core").add(new Exercise("core10", "core10"));
+            exercises_map.get("core").add(new Exercise("core11", "core11"));
+            exercises_map.get("core").add(new Exercise("core12", "core12"));
+            exercises_map.get("core").add(new Exercise("core13", "core13"));
+            exercises_map.get("core").add(new Exercise("core14", "core14"));
 
         }
 
         public static void map_creation(){
-            if (!retrieve()){
+//            if (!retrieve()){
                 generate_map();
-            }
+//            }
         }
 
     public static void save() {
